@@ -3,7 +3,7 @@ Group Members: Tevin Vu, Cindy Quach, Dalisa Nguyen
 
 How to create the database:
     createTable.py: to create a dynamodb table
-        run: `python3 createTable.py`
+        run: ```python3 createTable.py```
     putDataOnTable.py: to add some data in DirectMessages table
         run: `python3 putDataOnTable.py`
 
