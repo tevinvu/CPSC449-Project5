@@ -142,12 +142,12 @@ Server: WSGIServer/0.2 CPython/3.6.0
     Testing:
         `http GET http://localhost:8080/users/KevinAWortman/directMessages/41675926-d93f-4e95-ac48-0ebb23a69eac/`
     Response:
-    ```
         HTTP/1.0 200 OK
         Content-Length: 257
         Content-Type: application/json
         Date: Sat, 17 Apr 2021 23:09:42 GMT
         Server: WSGIServer/0.2 CPython/3.6.0
+   ```
 
    {
             "KevinAWortman": [
