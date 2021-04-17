@@ -1,11 +1,11 @@
 # CPSC449-Project5
 Group Members: Tevin Vu, Cindy Quach, Dalisa Nguyen 
 
-How to create the database:
-    createTable.py: to create a dynamodb table
-        run: ```python3 createTable.py```
-    putDataOnTable.py: to add some data in DirectMessages table
-        run: `python3 putDataOnTable.py`
+How to create the database:\
+    createTable.py: to create a dynamodb table\
+        run: ```python3 createTable.py```\
+    putDataOnTable.py: to add some data in DirectMessages table\
+        run: `python3 putDataOnTable.py`\
 
 How to run program/start services:
     - Need to download dynamodb local
