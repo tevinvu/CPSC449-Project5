@@ -5,19 +5,19 @@ How to create the database:\
     createTable.py: to create a dynamodb table\
         run: ```python3 createTable.py```\
     putDataOnTable.py: to add some data in DirectMessages table\
-        run: `python3 putDataOnTable.py`\
+        run: `python3 putDataOnTable.py`
 
-How to run program/start services:
-    - Need to download dynamodb local
-    - go to the folder dynamodb_local_latest
-    - to start the dynamodb local in port 8000 --> run the command:
-        `java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb`
+How to run program/start services:\
+    - Need to download dynamodb local\
+    - go to the folder dynamodb_local_latest\
+    - to start the dynamodb local in port 8000 --> run the command:\
+        `java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb`\
 
     - Start the Direct Message API Web Service Back-end:
-        `foreman start`
+        `foreman start`\
 
-Client Contract:  
-    **sendDirectMessage(to, from, message, quickReplies=None)**
+Client Contract:\  
+    **sendDirectMessage(to, from, message, quickReplies=None)**\
         Sends a DM to a user. The API call may or may not include a list of quickReplies.
     Testing:
         `http --verbose POST http://localhost:8080/users/KevinAWortman/directMessages/ from=ProfAvery message="Good morning"`
@@ -43,7 +43,7 @@ Client Contract:
 
         ProfAvery are successful to send a message to KevinAWortman
 
-    **replyToDirectMessage(messageId, message)** 
+    **replyToDirectMessage(messageId, message)**\
         Replies to a DM. The message may either be text or a quick-reply number. If the message parameter is a quick-reply number, it must have been in response to a  messageId that included a quick-replies field.
     Testing:
         `http --verbose POST http://localhost:8080/users/KevinAWortman/directMessages/b08fc995-93f3-466a-b48f-623d6da0de84/ message=1`
@@ -68,7 +68,7 @@ Client Contract:
 
         KevinAWortman has replied to ProfAvery
 
-    **listDirectMessagesFor(username)**
+    **listDirectMessagesFor(username)**\
     Lists a user's DMs.
     Testing:
         `http --verbose GET http://localhost:8080/users/ProfAvery/directMessages/`
@@ -129,7 +129,7 @@ Client Contract:
             ]
         }
 
-    **listRepliesTo(messageId)**
+    **listRepliesTo(messageId)**\
     Lists the replies to a DM.
     Testing:
         `http GET http://localhost:8080/users/KevinAWortman/directMessages/41675926-d93f-4e95-ac48-0ebb23a69eac/`
