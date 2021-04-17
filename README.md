@@ -34,16 +34,16 @@ Client Contract:
             "message": "Good morning"
         }
 
-    Response:
+   Response:
         HTTP/1.0 201 Created
         Content-Length: 59
         Content-Type: text/html; charset=UTF-8
         Date: Sat, 17 Apr 2021 22:07:05 GMT
         Server: WSGIServer/0.2 CPython/3.6.0
 
-        ProfAvery are successful to send a message to KevinAWortman
+   ProfAvery are successful to send a message to KevinAWortman
 
-    **replyToDirectMessage(messageId, message)**\
+   **replyToDirectMessage(messageId, message)**\
         Replies to a DM. The message may either be text or a quick-reply number. If the message parameter is a quick-reply number, it must have been in response to a  messageId that included a quick-replies field.\
     Testing:
         `http --verbose POST http://localhost:8080/users/KevinAWortman/directMessages/b08fc995-93f3-466a-b48f-623d6da0de84/ message=1`
@@ -56,9 +56,9 @@ Client Contract:
         Host: localhost:8080
         User-Agent: HTTPie/2.4.0
 
-        {
+   {
             "message": "1"
-        }
+   }
      Response:
         HTTP/1.0 201 Created
         Content-Length: 38
@@ -66,9 +66,9 @@ Client Contract:
         Date: Sat, 17 Apr 2021 22:27:22 GMT
         Server: WSGIServer/0.2 CPython/3.6.0
 
-        KevinAWortman has replied to ProfAvery
+   KevinAWortman has replied to ProfAvery
 
-    **listDirectMessagesFor(username)**\
+   **listDirectMessagesFor(username)**\
     Lists a user's DMs.\
     Testing:
         `http --verbose GET http://localhost:8080/users/ProfAvery/directMessages/`
@@ -78,7 +78,6 @@ Client Contract:
         Connection: keep-alive
         Host: localhost:8080
         User-Agent: HTTPie/2.4.0
-
     Response:
         HTTP/1.0 200 OK
         Content-Length: 939
@@ -86,7 +85,7 @@ Client Contract:
         Date: Sat, 17 Apr 2021 22:32:11 GMT
         Server: WSGIServer/0.2 CPython/3.6.0
 
-        {
+   {
             "user": [
                 {
                     "fromUsername": "KevinAWortman",
@@ -129,7 +128,7 @@ Client Contract:
             ]
         }
 
-    **listRepliesTo(messageId)**\
+   **listRepliesTo(messageId)**\
     Lists the replies to a DM.\
     Testing:
         `http GET http://localhost:8080/users/KevinAWortman/directMessages/41675926-d93f-4e95-ac48-0ebb23a69eac/`
@@ -140,7 +139,7 @@ Client Contract:
         Date: Sat, 17 Apr 2021 23:09:42 GMT
         Server: WSGIServer/0.2 CPython/3.6.0
 
-        {
+   {
             "KevinAWortman": [
                 {
                     "fromUsername": "ProfAvery",
@@ -151,7 +150,7 @@ Client Contract:
                     "toUsername": "KevinAWortman"
                 }
             ]
-        }
+   }
 
 
 
