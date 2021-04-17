@@ -86,12 +86,12 @@ Server: WSGIServer/0.2 CPython/3.6.0
         User-Agent: HTTPie/2.4.0
     ```
     Response:
-    ```
         HTTP/1.0 200 OK
         Content-Length: 939
         Content-Type: application/json
         Date: Sat, 17 Apr 2021 22:32:11 GMT
         Server: WSGIServer/0.2 CPython/3.6.0
+    ```
 
    {
             "user": [
