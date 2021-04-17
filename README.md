@@ -13,8 +13,8 @@ How to run program/start services:\
     - to start the dynamodb local in port 8000 --> run the command:\
         `java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb`
 
-    - Start the Direct Message API Web Service Back-end:
-        `foreman start`
+   - Start the Direct Message API Web Service Back-end:
+       `foreman start`
 
 Client Contract: 
     **sendDirectMessage(to, from, message, quickReplies=None)**\
