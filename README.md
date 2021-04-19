@@ -7,10 +7,10 @@ How to create the database:\
     putDataOnTable.py: to add some data in DirectMessages table\
         run: `python3 putDataOnTable.py`
 
-How to run program/start services:\
-- Need to download dynamodb local\
-- go to the folder dynamodb_local_latest\
-- to start the dynamodb local in port 8000 --> run the command:\
+How to run program/start services:
+- Need to download dynamodb local
+- go to the folder dynamodb_local_latest
+- to start the dynamodb local in port 8000 --> run the command:
 > ```shell-session
 > $ java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb
 > ```
@@ -19,8 +19,8 @@ How to run program/start services:\
 > ```shell-session
 > $ foreman start
 > ```
-Client Contract: 
-**`sendDirectMessage(to, from, message, quickReplies=None)`**
+Client Contract:
+- **`sendDirectMessage(to, from, message, quickReplies=None)`**
 Sends a DM to a user. The API call may or may not include a list of quickReplies.\
 Testing:   
 > ```shell-session
@@ -51,7 +51,7 @@ Server: WSGIServer/0.2 CPython/3.6.0
 ProfAvery are successful to send a message to KevinAWortman
 ```
    
-**`replyToDirectMessage(messageId, message)`**
+- **`replyToDirectMessage(messageId, message)`**
 Replies to a DM. The message may either be text or a quick-reply number. If the message parameter is a quick-reply number, it must have been in response to a  messageId that included a quick-replies field.\
 Testing:
 > ```shell-session
@@ -81,7 +81,7 @@ Server: WSGIServer/0.2 CPython/3.6.0
 KevinAWortman has replied to ProfAvery
 ```
 
-**`listDirectMessagesFor(username)`**
+- **`listDirectMessagesFor(username)`**
 Lists a user's DMs.\
 Testing:
 > ```shell-session
@@ -147,7 +147,7 @@ Server: WSGIServer/0.2 CPython/3.6.0
 }
 ```
 
-**`listRepliesTo(messageId)`**
+- **`listRepliesTo(messageId)`**
 Lists the replies to a DM.\
 Testing:
 > ```shell-session
