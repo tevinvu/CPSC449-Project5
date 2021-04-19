@@ -1,5 +1,5 @@
 # CPSC449-Project5
-Group Members: Tevin Vu, Cindy Quach, Dalisa Nguyen 
+**`Group Members: Tevin Vu, Cindy Quach, Dalisa Nguyen`**
 
 How to create the database:\
     createTable.py: to create a dynamodb table\
@@ -17,11 +17,13 @@ How to run program/start services:\
        `foreman start`
 
 Client Contract: 
-    **sendDirectMessage(to, from, message, quickReplies=None)**\
+    **`sendDirectMessage(to, from, message, quickReplies=None)`**\
         Sends a DM to a user. The API call may or may not include a list of quickReplies.\
 Testing:
    
-`http --verbose POST http://localhost:8080/users/KevinAWortman/directMessages/ from=ProfAvery message="Good morning"`
+>```shell-session
+> $ http --verbose POST http://localhost:8080/users/KevinAWortman/directMessages/ from=ProfAvery message="Good morning"
+> ```
 ```    
 POST /users/KevinAWortman/directMessages/ HTTP/1.1
 Accept: application/json, */*;q=0.5
@@ -164,12 +166,3 @@ Server: WSGIServer/0.2 CPython/3.6.0
     ]
 }
 ```
-
-
-
-
-
-
-
-
-
