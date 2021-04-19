@@ -3,7 +3,7 @@ Group Members: Tevin Vu, Cindy Quach, Dalisa Nguyen
 
 How to create the database:\
     createTable.py: to create a dynamodb table\
-        run: ```python3 createTable.py```\
+        run: ```python3 createTable.py```
     putDataOnTable.py: to add some data in DirectMessages table\
         run: `python3 putDataOnTable.py`
 
@@ -20,31 +20,32 @@ Client Contract:
     **sendDirectMessage(to, from, message, quickReplies=None)**\
         Sends a DM to a user. The API call may or may not include a list of quickReplies.\
     Testing:
-    ```
+   
         `http --verbose POST http://localhost:8080/users/KevinAWortman/directMessages/ from=ProfAvery message="Good morning"`
-        POST /users/KevinAWortman/directMessages/ HTTP/1.1
-        Accept: application/json, */*;q=0.5
-        Accept-Encoding: gzip, deflate
-        Connection: keep-alive
-        Content-Length: 48
-        Content-Type: application/json
-        Host: localhost:8080
-        User-Agent: HTTPie/2.4.0
-        {
-            "from": "ProfAvery",
-            "message": "Good morning"
-        }
-    ```
+```    
+POST /users/KevinAWortman/directMessages/ HTTP/1.1
+Accept: application/json, */*;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Content-Length: 48
+Content-Type: application/json
+Host: localhost:8080
+User-Agent: HTTPie/2.4.0
+{
+    "from": "ProfAvery",
+    "message": "Good morning"
+}
+```
    Response:
-   ```
-        HTTP/1.0 201 Created
-        Content-Length: 59
-        Content-Type: text/html; charset=UTF-8
-        Date: Sat, 17 Apr 2021 22:07:05 GMT
-        Server: WSGIServer/0.2 CPython/3.6.0
+```
+HTTP/1.0 201 Created
+Content-Length: 59
+Content-Type: text/html; charset=UTF-8
+Date: Sat, 17 Apr 2021 22:07:05 GMT
+Server: WSGIServer/0.2 CPython/3.6.0
 
-   ProfAvery are successful to send a message to KevinAWortman
-   ```
+ProfAvery are successful to send a message to KevinAWortman
+```
    
    **replyToDirectMessage(messageId, message)**\
         Replies to a DM. The message may either be text or a quick-reply number. If the message parameter is a quick-reply number, it must have been in response to a  messageId that included a quick-replies field.\
