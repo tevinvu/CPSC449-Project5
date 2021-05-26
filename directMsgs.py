@@ -183,14 +183,25 @@ def listDirectMessagesFor(username):
 @get('/users/<username>/directMessages/<messageId>/')
 def listRepliesTo(username, messageId):
     try:
-        reply_resp = get_dynamodb_resource().Table("DirectMessages").scan(
-            FilterExpression=Key('toUsername').eq(username)
-            and Attr('in-reply-to').eq(messageId)
+        reply_resp = get_dynamodb_resource().Table("DirectMessages").query(
+            KeyConditionExpression=Key('toUsername').eq(username)
         )
+        reply_list = []   #list of in-reply-to to the messageId
         logging.debug(reply_resp['Items'])
         temp_replies = reply_resp['Items']
-        #if the message reply is a numeric--> turn it into the string message
+        
+        
+        #check if any 'in-reply-to' match with the messageId
         for item in temp_replies:
+            isInReplyTo = checkKey(item, 'in-reply-to')
+            if isInReplyTo:
+                if item['in-reply-to'] == messageId:                   
+                    logging.debug(f" Check in-reply-to :{item['in-reply-to']}")
+                    reply_list.append(item)
+                    logging.debug(f"Message Reply to: {item}")
+
+        #if the message reply is a numeric--> turn it into the string message
+        for item in reply_list:
             if item['message'].isnumeric():
                 try:
                     resp = get_dynamodb_resource().Table("DirectMessages").get_item(
@@ -206,14 +217,13 @@ def listRepliesTo(username, messageId):
                     logging.debug(f"yo: {item['message']}")
                 except Exception as error:
                     abort(409, str(error))
-                
     except Exception as error:
         abort(409, str(error))
-    if not reply_resp['Items']:
+    if not reply_list:
         abort(400, "Username or messageId is not correct")
     else:
         response.status = 200
-        return {username: reply_resp['Items']}
+        return {username: reply_list}
     
     
 

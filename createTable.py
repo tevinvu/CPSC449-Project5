@@ -67,5 +67,5 @@ def get_item_on_table():
         print(items)
 
 if __name__ == '__main__':
-    # create_table()
-    get_item_on_table()       #comment this line out to get the specific item
+    create_table()
+    # get_item_on_table()       #comment this line out to get the specific item
